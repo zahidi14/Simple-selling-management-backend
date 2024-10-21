@@ -4,20 +4,17 @@
   "description": "A  backend using node, express, and postgresql for a simple inventory management",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "author": "Zahidi14",
   "license": "ISC",
   "dependencies": {
-    "@supabase/supabase-js": "^2.45.3",
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
-    "express": "^4.21.0",
+    "express": "^4.21.1",
     "jsonwebtoken": "^9.0.2",
-    "mysql2": "^3.11.0",
     "pg": "^8.13.0",
-    "sequelize": "^6.37.3",
-    "supabase": "^1.191.3"
+    "sequelize": "^6.37.4"
   }
 }

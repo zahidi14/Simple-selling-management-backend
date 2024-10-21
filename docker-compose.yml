@@ -1,0 +1,35 @@
+version: "3.9"
+
+services:
+  # Node.js Service
+  node:
+    build: ./
+    container_name: node_app
+    env_file:
+      - .env
+    ports:
+      - "5000:5000" # Expose port 3000 to the host
+    depends_on:
+      - postgres # Wait until PostgreSQL service is up
+
+  # PostgreSQL Service
+  postgres:
+    image: postgres:15
+    container_name: postgresql
+    env_file:
+      - .env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./config/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432" # Expose PostgreSQL port to the host
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres", "-d", "ivm"]
+      interval: 10s
+      retries: 5
+      start_period: 10s
+      timeout: 5s
+
+volumes:
+  postgres_data:
+    driver: local
