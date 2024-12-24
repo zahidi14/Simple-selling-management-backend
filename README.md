@@ -40,25 +40,12 @@ This repository contains a simple setup to run a Node.js application and Postgre
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/your-username/your-repo.git
-cd your-repo/backend
+git clone https://github.com/zahidi14/Simple-selling-management-backend
+cd Simple-selling-management-backend
 ```
 
-### 2. Configure Environment Variables
-Create a `.env` file in the `backend` directory and include the following variables:
 
-```env
-# PostgreSQL Environment Variables
-POSTGRES_USER=postgres
-POSTGRES_PASSWORD=your_password
-POSTGRES_DB=ivm
-
-# Node.js Environment Variables
-NODE_ENV=development
-PORT=5000
-```
-
-### 3. Build and Start the Services
+### 2. Build and Start the Services
 Run the following command to build and start the containers:
 ```bash
 docker compose up --build
